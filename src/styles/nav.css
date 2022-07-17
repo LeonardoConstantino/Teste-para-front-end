@@ -1,0 +1,87 @@
+@import url("./variaveis.css");
+
+nav{
+    background-color: var(--cor-principal);
+    padding: var(--p-tela-grande);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav.logo{
+    width: 100px;
+    height: 70px;
+}
+
+.logo>img{
+    width: 100px;
+    text-align: center;
+}
+
+nav>div>label{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+   user-select: none;
+    text-align: center;
+    transition: .5s;
+}
+
+nav>div>label>input {
+    /* position: absolute; */
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  nav>div>label>input section.itens-carrinho{
+    background-color: var(--cor-principal);
+    padding: var(--p-tela-grande);
+    display: none;
+    height: 0;
+}
+
+nav>div>label>input:checked ~ section.itens-carrinho{
+    display: block;
+    height: 50vh;
+}
+
+.btn-carrinho{
+    width: 50px;
+    height: 50px;
+}
+
+.contagem-itens{
+    background-color: var(--cor-contagen-itens);
+    display: inline-block;
+    /* justify-content: space-between;
+    align-items: center; */
+    text-align: center;
+    position: relative;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    bottom: 16px;
+    left: -8px;
+
+}
+
+nav>div>button:hover{
+    box-shadow: 0 0 5px 2px rgb(0 0 0 / 50%);
+}
+
+nav>div>button:active{
+    background-color: var(--cor-destaque);
+}
+
+nav>div>button:active i{
+    transform: scale(.8);
+}

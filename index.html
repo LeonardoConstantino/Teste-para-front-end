@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./src/styles/reset.css"> -->
+    <link rel="stylesheet" href="index.css">
+    <script src="main.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="src/img/logo.png" alt="logo">
+        </div>
+        <div class="btn-carrinho">
+            <label>
+                <input type="checkbox">
+                <i class="icon-carrinho">
+                    <span></span>
+                    <span></span>
+                </i>
+            </label>
+            <span class="contagem-itens">3</span>
+        </div>
+    </nav>
+    <section class="itens-carrinho">
+        <div class="item-carrinho">
+            <img src="tvlisao.png" alt="item">
+            <div>
+                <h3>tvlisao</h3>
+                <p class="valor-parcelado"> 10x234</p>
+                <p class="valor-avista">12354 a vista</p>
+            </div>
+            <label>
+                <input type="button" value="X">
+            </label>
+        </div>
+        <section class="subtotal">
+            <p>subtotal</p>
+            <hr>
+            <p><span>10</span> R$ <span>4665</span></p>
+            <p>ou R$ <span>456158</span> à vista</p>
+        </section>
+    </section>
+    <main>
+        <ul class="produtos">
+            <li>
+                <div class="produto">
+                    <div class="imagens-produto">
+                        <ul>
+                            <li><img src="" alt=""></li>
+                            <li><img src="" alt=""></li>
+                            <li><img src="" alt=""></li>
+                        </ul>
+                        <img src="" alt="" class="imagen-produto">
+                    </div>
+                    <div class="detalhes">
+                        <h2>nome detalhado do produto</h2>
+                        <input type="checkbox" name="" id="">
+                        <hr>
+                        <p class="melhor-preco">melhor preço</p>
+                        <div>
+                            <p>
+                                <span>10x R1 1654,12</span>
+                                <p>ou<span>R1 1139,90 a vista</span><input type="button" value="adicionar ao carrinho >"></p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="produto">
+                    <div class="imagens-produto">
+                        <ul>
+                            <li><img src="" alt=""></li>
+                            <li><img src="" alt=""></li>
+                            <li><img src="" alt=""></li>
+                        </ul>
+                        <img src="" alt="" class="imagen-produto">
+                    </div>
+                    <div class="detalhes">
+                        <h2>nome detalhado do produto</h2>
+                        <input type="checkbox" name="" id="">
+                        <hr>
+                        <p class="melhor-preco">melhor preço</p>
+                        <div>
+                            <p>
+                                <span>10x R2 1654,12</span>
+                                <p>ou<span>R2 1139,90 a vista</span><input type="button" value="adicionar ao carrinho >"></p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="produto">
+                    <div class="imagens-produto">
+                        <ul>
+                            <li><img src="" alt=""></li>
+                            <li><img src="" alt=""></li>
+                            <li><img src="" alt=""></li>
+                        </ul>
+                        <img src="" alt="" class="imagen-produto">
+                    </div>
+                    <div class="detalhes">
+                        <h2>nome detalhado do produto</h2>
+                        <input type="checkbox" name="" id="">
+                        <hr>
+                        <p class="melhor-preco">melhor preço</p>
+                        <div>
+                            <p>
+                                <span>10x R3 1654,12</span>
+                                <p>ou<span>R3 1139,90 a vista</span><input type="button" value="adicionar ao carrinho >"></p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+
+    <!-- ul.produtos>li*3>div.produto>ul.imagens-produto>li*3>img^^img.imagen-produto+div>h2{nome detalhado do produto}+input:c+hr+p.melhor-preco{melhor preço}+div>p>span{10x R$ 1654,12}+p{ou}>span{R$ 1139,90 a vista}+input:b[value="adicionar ao carrinho >"] -->
+</body>
+</html>

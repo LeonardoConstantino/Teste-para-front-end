@@ -1,0 +1,69 @@
+/* icone carrinho */
+i.icon-carrinho{
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+i.icon-carrinho>span:nth-child(1){
+    display: block;
+    border: solid 3px #121212;
+    border-radius: 20%;
+    width: 100%;
+    height: 100%;
+    transform: skew(20deg);
+    position: absolute;
+}
+i.icon-carrinho>span:nth-child(1):after{
+    content: '';
+    position: absolute;
+    border: solid 3px #121212;
+    border-radius: 50%;
+    transform: skew(-20deg);
+    width: 50%;
+    height: 80%;
+    bottom: -108%;
+    left: -20%;
+}
+i.icon-carrinho>span:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    border: solid 3px #121212;
+    border-radius: 50%;
+    transform: skew(-20deg);
+    width: 50%;
+    height: 80%;
+    bottom: -108%;
+    right: 0;
+}
+i.icon-carrinho>span:nth-child(2){
+    border-top-right-radius: 50%;
+    border-top: solid 3px #121212;
+    border-right: solid 2px #121212;
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: -20%;
+    left: -30%;
+}
+i.icon-carrinho>span:nth-child(2)::after{
+    content: '';
+    background-color: #121212;
+    position: absolute;
+    transform: skew(20deg);
+    width: 40%;
+    height: 490%;
+    top: 120%;
+    left: 320%;
+}
+i.icon-carrinho>span:nth-child(2)::before{
+    content: '';
+    background-color: #121212;
+    position: absolute;
+    transform: skew(20deg);
+    width: 350%;
+    height: 80%;
+    top: 350%;
+    left: 170%;
+}
+
