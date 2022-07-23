@@ -13,6 +13,8 @@ i.icon-carrinho>span:nth-child(1){
     height: 100%;
     transform: skew(20deg);
     position: absolute;
+    bottom: -25%;
+    /* left: 30%; */
 }
 i.icon-carrinho>span:nth-child(1):after{
     content: '';
@@ -43,7 +45,7 @@ i.icon-carrinho>span:nth-child(2){
     position: absolute;
     width: 30%;
     height: 30%;
-    top: -20%;
+    top: 5%;
     left: -30%;
 }
 i.icon-carrinho>span:nth-child(2)::after{
