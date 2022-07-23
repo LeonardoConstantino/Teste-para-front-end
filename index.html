@@ -15,46 +15,65 @@
             <img src="src/img/logo.png" alt="logo">
         </div>
         <div class="btn-carrinho">
-            <label>
-                <input type="checkbox">
+            <button data-Js="btn-carrinho">
+                <!-- <input type="button"> -->
                 <i class="icon-carrinho">
                     <span></span>
                     <span></span>
                 </i>
-            </label>
-            <span class="contagem-itens">3</span>
+                <span class="contagem-itens">3</span>
+            </button>
         </div>
     </nav>
-    <section class="itens-carrinho">
-        <div class="item-carrinho">
-            <img src="tvlisao.png" alt="item">
+    <section class="itens-carrinho active" data-Js="itens-carrinho">
+        <a class="item-carrinho" href="#">
             <div>
-                <h3>tvlisao</h3>
-                <p class="valor-parcelado"> 10x234</p>
-                <p class="valor-avista">12354 a vista</p>
+                <div class="img-carrinho">
+                    <img src="https://via.placeholder.com/150x100" alt="item">
+                </div>
+                <div class="descricao">
+                    <h3>Smart TV Samsung Série 4 UN32J4300AG 32 polegadas LED Plana</h3>
+                    <p>
+                        <span class="valor-arcelado"> 10x234</span> <br>
+                        <span class="valor-avista">12354 a vista</span>
+                    </p>
+                </div>
             </div>
-            <label>
-                <input type="button" value="X">
-            </label>
-        </div>
-        <section class="subtotal">
+            <button>X</button>
+        </a>
+        <a class="item-carrinho" href="#">
+            <div>
+                <div class="img-carrinho">
+                    <img src="https://via.placeholder.com/300x400" alt="item">
+                </div>
+                <div class="descricao">
+                    <h3>Smartphone Apple iPhone 7 128GB</h3>
+                    <p>
+                        <span class="valor-arcelado"> 10x234</span> <br>
+                        <span class="valor-avista">12354 a vista</span>
+                    </p>
+                </div>
+            </div>
+            <button>X</button>
+        </a>
+        <footer class="subtotal">
             <p>subtotal</p>
             <hr>
             <p><span>10</span> R$ <span>4665</span></p>
             <p>ou R$ <span>456158</span> à vista</p>
-        </section>
+        </footer>
     </section>
     <main>
         <ul class="produtos">
             <li>
-                <div class="produto">
+                <a class="produto" href="#">
                     <div class="imagens-produto">
                         <ul>
-                            <li><img src="" alt=""></li>
-                            <li><img src="" alt=""></li>
-                            <li><img src="" alt=""></li>
+                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
                         </ul>
-                        <img src="" alt="" class="imagen-produto">
+                        <img src="https://via.placeholder.com/150" alt="produto" class="imagen-produto">
                     </div>
                     <div class="detalhes">
                         <h2>nome detalhado do produto</h2>
@@ -68,17 +87,17 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </a>
             </li>
             <li>
-                <div class="produto">
+                <a class="produto" href="#">
                     <div class="imagens-produto">
                         <ul>
-                            <li><img src="" alt=""></li>
-                            <li><img src="" alt=""></li>
-                            <li><img src="" alt=""></li>
+                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
                         </ul>
-                        <img src="" alt="" class="imagen-produto">
+                        <img src="https://via.placeholder.com/150" alt="produto" class="imagen-produto">
                     </div>
                     <div class="detalhes">
                         <h2>nome detalhado do produto</h2>
@@ -92,17 +111,17 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </a>
             </li>
             <li>
-                <div class="produto">
+                <a class="produto" href="#">
                     <div class="imagens-produto">
                         <ul>
-                            <li><img src="" alt=""></li>
-                            <li><img src="" alt=""></li>
-                            <li><img src="" alt=""></li>
+                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
                         </ul>
-                        <img src="" alt="" class="imagen-produto">
+                        <img src="https://via.placeholder.com/150" alt="produto" class="imagen-produto">
                     </div>
                     <div class="detalhes">
                         <h2>nome detalhado do produto</h2>
@@ -116,7 +135,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </a>
             </li>
         </ul>
     </main>
