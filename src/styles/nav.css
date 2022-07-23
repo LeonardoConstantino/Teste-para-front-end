@@ -3,85 +3,178 @@
 nav{
     background-color: var(--cor-principal);
     padding: var(--p-tela-grande);
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
 }
 
-nav.logo{
+nav .logo{
     width: 100px;
     height: 70px;
 }
 
-.logo>img{
+.logo img{
     width: 100px;
     text-align: center;
 }
 
-nav>div>label{
+nav button{
     background-color: transparent;
-    outline: none;
-    border: none;
     border-radius: 10px;
     padding-left: 10px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
-   user-select: none;
     text-align: center;
     transition: .5s;
 }
 
-nav>div>label>input {
-    /* position: absolute; */
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-  nav>div>label>input section.itens-carrinho{
-    background-color: var(--cor-principal);
-    padding: var(--p-tela-grande);
-    display: none;
-    height: 0;
-}
-
-nav>div>label>input:checked ~ section.itens-carrinho{
-    display: block;
-    height: 50vh;
-}
-
 .btn-carrinho{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
 }
 
 .contagem-itens{
     background-color: var(--cor-contagen-itens);
     display: inline-block;
-    /* justify-content: space-between;
-    align-items: center; */
     text-align: center;
     position: relative;
     border-radius: 50%;
+    font-weight: bold;
+    color: #ddd;
     width: 25px;
     height: 25px;
-    bottom: 16px;
-    left: -8px;
+    bottom: 8px;
+    right: 12px;
 
 }
 
-nav>div>button:hover{
+/* nav>div>button:hover{
     box-shadow: 0 0 5px 2px rgb(0 0 0 / 50%);
 }
 
 nav>div>button:active{
     background-color: var(--cor-destaque);
+} */
+
+nav>div>button:active i, nav>div>button:active .contagem-itens{
+    transform: scale(.8);
 }
 
-nav>div>button:active i{
+
+
+.itens-carrinho{
+    display: none;
+    position: absolute;
+    background-color: var(--cor-menu);
+    width: 100%;
+    height: 0;
+    opacity: 0;
+}
+
+.active{
+    animation: active .3s ease-out forwards;
+}
+
+@keyframes active {
+    from {
+        transform: translatex(20%);
+        filter: opacity(0);
+    }
+    to {
+        transform: translatex(0px);
+        filter: opacity(1);
+    }
+}
+
+.itens-carrinho.active{
+    display: block;
+    height: fit-content;
+    opacity: 1;
+}
+
+a.item-carrinho:link, a.item-carrinho:visited{
+    color: var(--cor-texto1);
+    text-decoration: none;
+}
+
+a.item-carrinho{
+    height: 124px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--cor-menu-destaque);
+    padding: var(--p-tela-grande);
+    margin-top: 3px;
+}
+
+a.item-carrinho > div{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+div.img-carrinho{
+    border: solid 1px var(--cor-texto2);
+    background-color: var(--cor-bg);
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.img-carrinho > img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.descricao h3, .descricao p{
+    font-weight: 100;
+}
+
+.descricao p{
+    color: var(--cor-texto2);
+}
+
+a.item-carrinho > button{
+    align-self: flex-start;
+    position: relative;
+    background-color: transparent;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+a.item-carrinho > button:hover{
+    transform: scale(1.2);
+}
+a.item-carrinho > button:active{
     transform: scale(.8);
+}
+
+footer.subtotal{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: var(--p-tela-grande);
+}
+
+footer.subtotal > hr{
+    border: solid 1px black;
+    opacity: .3;
+    width:100%;
+    text-align:center;
+    margin-top:0
 }
