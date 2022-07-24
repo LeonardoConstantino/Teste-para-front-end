@@ -8,11 +8,16 @@ html{
     outline: none;
     border: none;
     font-size: 16px;
+    font-family: 'Kanit', sans-serif;
 }
 
 *, *::before, *::after{
     box-sizing: border-box;
 }
+
+/* body{
+    max-width: 738px;
+} */
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul{
     margin: 0;
@@ -27,4 +32,9 @@ ol, ul{
 img{
     max-width: 100%;
     height: auto;
+}
+
+a:link, a:visited{
+    color: #fff;
+    text-decoration: none;
 }

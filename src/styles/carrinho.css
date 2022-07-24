@@ -5,22 +5,17 @@
     width: 100%;
     position: absolute;
     height: fit-content;
-    opacity: 0;
     box-shadow: 0 12px 26px -8px rgba(0, 0, 0, .5);
     transition: .3s cubic-bezier(0.49, 0.06, 0.21, 1.14);
-    transform: translatex(101%);
+    transform: translateY(-101%);
+    opacity: 0;
     transform-origin: right;
+    z-index: 3;
 }
 
 .itens-carrinho.active {
-    transform: translatex(0);
+    transform: translateY(0);
     opacity: 1;
-}
-
-a.item-carrinho:link,
-a.item-carrinho:visited {
-    color: var(--cor-texto1);
-    text-decoration: none;
 }
 
 a.item-carrinho {
@@ -66,6 +61,10 @@ div.img-carrinho>img {
 .descricao h3,
 .descricao p {
     font-weight: 100;
+}
+
+.descricao h3{
+    color: var(--cor-texto1);
 }
 
 .descricao p {
