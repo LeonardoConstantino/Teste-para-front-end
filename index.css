@@ -2,11 +2,13 @@
 
 @import url("./src/styles/reset.css");
 
-
 @import url("./src/styles/icons.css");
 
+@import url("./src/styles/utilitarios.css");
 
 @import url("./src/styles/nav.css");
+
+@import url("./src/styles/carrinho.css");
 
 
 *{

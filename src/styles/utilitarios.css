@@ -1,0 +1,12 @@
+.anima-btn{
+    cursor: pointer;
+    transition: .1s
+}
+
+.anima-btn:hover{
+    transform: scale(1.1);
+}
+
+.anima-btn:active{
+    transform: scale(1);
+}

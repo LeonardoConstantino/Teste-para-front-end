@@ -1,0 +1,96 @@
+@import url("./variaveis.css");
+
+.itens-carrinho {
+    background-color: var(--cor-menu);
+    width: 100%;
+    position: absolute;
+    height: fit-content;
+    opacity: 0;
+    box-shadow: 0 12px 26px -8px rgba(0, 0, 0, .5);
+    transition: .3s cubic-bezier(0.49, 0.06, 0.21, 1.14);
+    transform: translatex(101%);
+    transform-origin: right;
+}
+
+.itens-carrinho.active {
+    transform: translatex(0);
+    opacity: 1;
+}
+
+a.item-carrinho:link,
+a.item-carrinho:visited {
+    color: var(--cor-texto1);
+    text-decoration: none;
+}
+
+a.item-carrinho {
+    height: 122px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--cor-menu-destaque);
+    padding: var(--p-tela-grande);
+    margin-top: 3px;
+}
+
+a.item-carrinho>div {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+div.img-carrinho {
+    border: solid 1px var(--cor-texto2);
+    background-color: var(--cor-bg);
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.img-carrinho>img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.descricao h3,
+.descricao p {
+    font-weight: 100;
+}
+
+.descricao p {
+    color: var(--cor-texto2);
+}
+
+a.item-carrinho>button {
+    align-self: flex-start;
+    position: relative;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+footer.subtotal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: var(--p-tela-grande);
+}
+
+footer.subtotal>hr {
+    border: solid 1px black;
+    opacity: .3;
+    width: 100%;
+    text-align: center;
+    margin-top: 0
+}
