@@ -46,10 +46,8 @@ nav button {
     border-radius: 50%;
     font-weight: bold;
     color: var(--cor-texto1);
-    width: 25px;
-    height: 25px;
+    padding: 2px;
     bottom: 16px;
     right: 12px;
-
 }
 

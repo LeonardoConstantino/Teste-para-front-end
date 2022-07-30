@@ -1,5 +1,3 @@
-@import url("./variaveis.css");
-
 .itens-carrinho {
     background-color: var(--cor-menu);
     width: 100%;
@@ -10,7 +8,7 @@
     transform: translateY(-101%);
     opacity: 0;
     transform-origin: right;
-    z-index: 3;
+    z-index: 1;
 }
 
 .itens-carrinho.active {
@@ -18,7 +16,8 @@
     opacity: 1;
 }
 
-a.item-carrinho {
+div.item-carrinho {
+    cursor: auto;
     height: 122px;
     width: 100%;
     display: flex;
@@ -30,9 +29,10 @@ a.item-carrinho {
     margin-top: 3px;
 }
 
-a.item-carrinho>div {
+div.item-carrinho>div {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 16px;
 }
 
@@ -40,13 +40,13 @@ div.img-carrinho {
     border: solid 1px var(--cor-texto2);
     background-color: var(--cor-bg);
     width: 85px;
-    height: 85px;
+    height: 87px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-div.img-carrinho>img {
+div.img-carrinho > img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -58,20 +58,23 @@ div.img-carrinho>img {
     justify-content: space-between;
 }
 
-.descricao h3,
-.descricao p {
-    font-weight: 100;
-}
-
 .descricao h3{
+    cursor: pointer;
     color: var(--cor-texto1);
+    font-weight: 300;
+    max-width: 80%;
 }
 
-.descricao p {
+.descricao h3:hover{
+    text-decoration: underline;
+}
+
+.valor-carrinho p,.valor-carrinho span{
     color: var(--cor-texto2);
+    font-weight: 500;
 }
 
-a.item-carrinho>button {
+div.item-carrinho>button {
     align-self: flex-start;
     position: relative;
     background-color: transparent;
@@ -87,9 +90,8 @@ footer.subtotal {
 }
 
 footer.subtotal>hr {
-    border: solid 1px black;
+    border: solid 1px var(--cor-texto2);
     opacity: .3;
     width: 100%;
-    text-align: center;
     margin-top: 0
 }

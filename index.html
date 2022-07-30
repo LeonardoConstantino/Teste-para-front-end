@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <script src="main.js" defer></script>
     <title>Buscapé</title>
 </head>
+
 <body>
     <nav>
         <div class="logo">
@@ -19,41 +21,43 @@
                 <i class="icon-menu">
                     <span></span>
                 </i>
-                <span class="contagem-itens">2</span>
+                <span class="contagem-itens display-none">2</span>
             </button>
         </div>
     </nav>
     <section class="itens-carrinho" data-Js="itens-carrinho">
-        <a class="item-carrinho" href="#">
+        <div class="item-carrinho">
             <div>
                 <div class="img-carrinho">
                     <img src="https://via.placeholder.com/150x100" alt="item">
                 </div>
                 <div class="descricao">
-                    <h3>Smart TV Samsung Série 4 UN32J4300AG 32 polegadas LED Plana</h3>
-                    <p>
-                        <span class="valor-arcelado"> 10x234</span> <br>
-                        <span class="valor-avista">12354 a vista</span>
-                    </p>
+                    <h3><a href="#">Smart TV Samsung Série 4 UN32J4300AG 32 polegadas LED Plana</a></h3>
+                    <div class="valor-carrinho">
+                        <p><span class="quantidade-parcela-carrinho">10</span>x R$ <span
+                                class="valor-parcelado-carrinho">1654,12</span></p>
+                        <p>ou <span class="valor-avista-carrinho">R$ 1139,90</span> a vista</p>
+                    </div>
                 </div>
             </div>
             <button class="anima-btn">X</button>
-        </a>
-        <a class="item-carrinho" href="#">
+        </div>
+        <div class="item-carrinho">
             <div>
                 <div class="img-carrinho">
                     <img src="https://via.placeholder.com/300x400" alt="item">
                 </div>
                 <div class="descricao">
-                    <h3>Smartphone Apple iPhone 7 128GB</h3>
-                    <p>
-                        <span class="valor-arcelado"> 10x234</span> <br>
-                        <span class="valor-avista">12354 a vista</span>
-                    </p>
+                    <h3><a href="#">Smartphone Apple iPhone 7 128GB</a></h3>
+                    <div class="valor-carrinho">
+                        <p><span class="quantidade-parcela-carrinho">10</span>x R$ <span
+                                class="valor-parcelado-carrinho">1654,12</span></p>
+                        <p>ou <span class="valor-avista-carrinho">R$ 1139,90</span> a vista</p>
+                    </div>
                 </div>
             </div>
             <button class="anima-btn">X</button>
-        </a>
+        </div>
         <footer class="subtotal">
             <p>subtotal</p>
             <hr>
@@ -65,81 +69,114 @@
         <h1>Os produtos mais populares, com o menor preço nas melhores ofertas!</h1>
         <ul class="produtos">
             <li>
-                <a class="produto" href="#">
-                    <div class="imagens-produto">
-                        <ul>
-                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
-                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
-                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
-                        </ul>
-                        <img src="https://via.placeholder.com/150" alt="produto" class="imagen-produto">
+                <div class="produto">
+                    <ul class="imagens-produto">
+                        <li class="select"><img src="https://via.placeholder.com/150x100" alt="produto"></li>
+                        <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                        <li><img src="https://via.placeholder.com/100x150" alt="produto"></li>
+                        <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                    </ul>
+                    <div class="imagen-produto">
+                        <img src="https://via.placeholder.com/150x100" alt="produto">
                     </div>
                     <div class="detalhes">
-                        <h2>nome detalhado do produto</h2>
-                        <input type="checkbox" name="" id="">
+                        <div class="titulo-produto">
+                            <div>
+                                <a href="#">Câmera Digital Canon EOS Rebel T5i 18.0 Megapixels</a>
+                                <label class="label-coracao anima-btn">
+                                    <input type="checkbox" class="input-coracao">
+                                    <i class="coracao">
+                                        <span></span>
+                                        <span></span>
+                                    </i>
+                                </label>
+                            </div>
+                        </div>
                         <hr>
-                        <p class="melhor-preco">melhor preço</p>
-                        <div>
-                            <p>
-                                <span>10x R1 1654,12</span>
-                                <p>ou<span>R1 1139,90 a vista</span><input type="button" value="adicionar ao carrinho >"></p>
-                            </p>
+                        <p class="melhor-preco display-none">melhor preço</p>
+                        <div class="valor">
+                            <div>
+                                <p><span class="quantidade-parcela">10x R$ </span><span
+                                        class="valor-parcelado">1654,12</span></p>
+                                <p>ou <span class="valor-avista">R$ 1139,90</span> a vista</p>
+                            </div>
+                            <button class="add-carrinho anima-btn">Adicionar ao carrinho ></button>
                         </div>
                     </div>
-                </a>
+                </div>
             </li>
             <li>
-                <a class="produto" href="#">
-                    <div class="imagens-produto">
-                        <ul>
-                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
-                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
-                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
-                        </ul>
-                        <img src="https://via.placeholder.com/150" alt="produto" class="imagen-produto">
-                    </div>
+                <div class="produto">
+                    <ul class="imagens-produto">
+                        <li class="select"><img src="https://via.placeholder.com/100x150" alt="produto"></li>
+                        <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                        <li><img src="https://via.placeholder.com/150x100" alt="produto"></li>
+                        <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                    </ul>
+                    <div class="imagen-produto"><img src="https://via.placeholder.com/100x150" alt="produto"></div>
+
                     <div class="detalhes">
-                        <h2>nome detalhado do produto</h2>
-                        <input type="checkbox" name="" id="">
+                        <div class="titulo-produto">
+                            <a href="#">Smartphone Apple iPhone 7 128GB
+                                <label class="label-coracao anima-btn">
+                                    <input type="checkbox" class="input-coracao">
+                                    <i class="coracao">
+                                        <span></span>
+                                        <span></span>
+                                    </i>
+                                </label>
+                            </a>
+                        </div>
                         <hr>
                         <p class="melhor-preco">melhor preço</p>
-                        <div>
-                            <p>
-                                <span>10x R2 1654,12</span>
-                                <p>ou<span>R2 1139,90 a vista</span><input type="button" value="adicionar ao carrinho >"></p>
-                            </p>
+                        <div class="valor">
+                            <div>
+                                <p><span class="quantidade-parcela">10x R$ </span><span
+                                        class="valor-parcelado">1654,12</span></p>
+                                <p>ou <span class="valor-avista">R$ 1139,90</span> a vista</p>
+                            </div>
+                            <button class="add-carrinho anima-btn">Adicionar ao carrinho ></button>
                         </div>
                     </div>
-                </a>
+                </div>
             </li>
             <li>
-                <a class="produto" href="#">
-                    <div class="imagens-produto">
-                        <ul>
-                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
-                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
-                            <li><img src="https://via.placeholder.com/150" alt="produto"></li>
-                        </ul>
-                        <img src="https://via.placeholder.com/150" alt="produto" class="imagen-produto">
-                    </div>
+                <div class="produto">
+                    <ul class="imagens-produto">
+                        <li class="select"><img src="https://via.placeholder.com/150" alt="produto"></li>
+                        <li><img src="https://via.placeholder.com/150x100" alt="produto"></li>
+                        <li><img src="https://via.placeholder.com/100x150" alt="produto"></li>
+                        <li><img src="https://via.placeholder.com/150" alt="produto"></li>
+                    </ul>
+                    <div class="imagen-produto"><img src="https://via.placeholder.com/150" alt="produto"></div>
+
                     <div class="detalhes">
-                        <h2>nome detalhado do produto</h2>
-                        <input type="checkbox" name="" id="">
+                        <div class="titulo-produto">
+                            <a href="#">Smart TV Samsung Série 4 UN32J4300AG 32 polegadas LED Plana
+                                <label class="label-coracao anima-btn">
+                                    <input type="checkbox" class="input-coracao">
+                                    <i class="coracao">
+                                        <span></span>
+                                        <span></span>
+                                    </i>
+                                </label>
+                            </a>
+                        </div>
                         <hr>
                         <p class="melhor-preco">melhor preço</p>
-                        <div>
-                            <p>
-                                <span>10x R3 1654,12</span>
-                                <p>ou<span>R3 1139,90 a vista</span><input type="button" value="adicionar ao carrinho >"></p>
-                            </p>
+                        <div class="valor">
+                            <div>
+                                <p><span class="quantidade-parcela">10x R$ </span><span
+                                        class="valor-parcelado">1654,12</span></p>
+                                <p>ou <span class="valor-avista">R$ 1139,90</span> a vista</p>
+                            </div>
+                            <button class="add-carrinho anima-btn">Adicionar ao carrinho ></button>
                         </div>
                     </div>
-                </a>
+                </div>
             </li>
         </ul>
     </main>
-
-
-    <!-- ul.produtos>li*3>div.produto>ul.imagens-produto>li*3>img^^img.imagen-produto+div>h2{nome detalhado do produto}+input:c+hr+p.melhor-preco{melhor preço}+div>p>span{10x R$ 1654,12}+p{ou}>span{R$ 1139,90 a vista}+input:b[value="adicionar ao carrinho >"] -->
 </body>
+
 </html>

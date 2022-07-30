@@ -10,3 +10,7 @@
 .anima-btn:active{
     transform: scale(1);
 }
+
+.display-none{
+    display: none;
+}
