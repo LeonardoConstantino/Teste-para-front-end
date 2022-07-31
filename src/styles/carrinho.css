@@ -1,9 +1,9 @@
 .itens-carrinho {
     background-color: var(--cor-menu);
-    width: 100%;
+    width: 738px;
     position: absolute;
     height: fit-content;
-    box-shadow: 0 12px 26px -8px rgba(0, 0, 0, .5);
+    box-shadow: var(--box-shadow-menu1);
     transition: .3s cubic-bezier(0.49, 0.06, 0.21, 1.14);
     transform: translateY(-101%);
     opacity: 0;
@@ -94,4 +94,48 @@ footer.subtotal>hr {
     opacity: .3;
     width: 100%;
     margin-top: 0
+}
+
+@media screen and (max-width: 735px) {
+    .itens-carrinho{
+        width: 100%;
+        min-height: 100%;
+        left: 0;
+    }
+
+    div.item-carrinho {
+        width: 100%;
+        margin-top: 6px;
+        height: fit-content;
+        padding: var(--padding-tela-pequena);
+    }
+
+    .descricao h3{
+        font-weight: 100;
+        max-width: 90%;
+    }
+
+    .valor-carrinho p,.valor-carrinho span{
+        font-weight: 300;
+    }
+
+    div.item-carrinho>button {
+        font-weight: 300;
+        font-size: 28px;
+    }
+
+    footer.subtotal {
+        padding: var(--padding-tela-pequena);
+    }
+}
+
+@media screen and (min-width: 740px) {
+    .itens-carrinho{
+        width: 70%;
+        max-width: 900px;
+    }
+
+    .descricao h3{
+        max-width: 100%;
+    }
 }

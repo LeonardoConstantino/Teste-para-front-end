@@ -4,12 +4,13 @@ nav {
     background-color: var(--cor-principal);
     padding: var(--p-tela-grande);
     position: relative;
+    width: 738px;
     height: 94px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    box-shadow: 0 12px 26px -12px rgba(0, 0, 0, .35);
+    box-shadow: var(--box-shadow-menu1);
     z-index: 4;
 }
 
@@ -30,7 +31,6 @@ nav button {
     width: 45px;
     height: 45px;
     text-align: center;
-    ;
 }
 
 .btn-carrinho {
@@ -51,3 +51,33 @@ nav button {
     right: 12px;
 }
 
+@media screen and (max-width: 735px) {
+    nav {
+        width: 100%;
+        padding: var(--padding-tela-pequena);
+    }
+
+    nav .logo {
+        width: 30%;
+        min-width: 90px;
+    }
+
+    nav button{
+        padding-left: 8%;
+    }
+
+    .contagem-itens {
+        padding: 0px;
+        font-size: 12px;
+        width: 5vw;
+        height: 5vw;
+    }
+
+}
+
+@media screen and (min-width: 740px) {
+    nav {
+        width: 70%;
+        max-width: 900px;
+    }
+}

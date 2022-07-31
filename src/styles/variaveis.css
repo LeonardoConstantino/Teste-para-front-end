@@ -8,7 +8,9 @@
     --cor-texto1: #ffffff;
     --cor-texto2: #121212;
     --cor-bg: #f3f3f3;
+    --box-shadow-menu1: 0px 20px 26px -20px rgb(0 0 0 / 35%);
+    --box-shadow-menu2: 0 0 30px -12px rgba(0, 0, 0, 0.35);
 
     --p-tela-grande: 16px 20px;
-    --padding-tela-pequena: 6px;
+    --padding-tela-pequena: 8px;
 }
