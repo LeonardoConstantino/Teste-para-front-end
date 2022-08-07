@@ -24,4 +24,4 @@ Teste pego no github do [Front-end Challenges](https://github.com/felipefialho/f
 
 [Link do teste](https://github.com/buscape-company/exercicios/tree/master/frontend)
 
-
+[Link do meu teste](https://leonardoconstantino.github.io/Teste-para-front-end/)
