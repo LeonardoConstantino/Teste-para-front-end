@@ -9,6 +9,8 @@
     opacity: 0;
     transform-origin: right;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .itens-carrinho.active {
@@ -87,6 +89,7 @@ footer.subtotal {
     flex-direction: column;
     align-items: flex-end;
     padding: var(--p-tela-grande);
+    order: 1;
 }
 
 footer.subtotal>hr {
@@ -97,6 +100,7 @@ footer.subtotal>hr {
 }
 
 @media screen and (max-width: 735px) {
+    
     .itens-carrinho{
         width: 100%;
         min-height: 100%;
@@ -131,7 +135,7 @@ footer.subtotal>hr {
 
 @media screen and (min-width: 740px) {
     .itens-carrinho{
-        width: 70%;
+        width: 100%;
         max-width: 900px;
     }
 
