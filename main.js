@@ -1,19 +1,27 @@
 const btnCarrinho = document.querySelector('[data-Js="btn-carrinho"]')
 const itensCarrinho = document.querySelector('[data-Js="itens-carrinho"]')
+const subtotal = document.querySelector('[data-Js="subtotal"]')
 const spamContagemItens = document.querySelector('[data-Js="contagem-itens"]')
 const produtos = document.querySelector('[data-Js="produtos"]')
 const dataItens = JSON.parse(localStorage.getItem('dataItens')) || {
     "produtos": []
 }
+const itensGostei = JSON.parse(localStorage.getItem('itensGostei')) || {
+    "itens": []
+}
+const url = "./src/data/data.json"
 
-const buscarDadosProdutos = async () => {
-    const dados = await fetch("./src/data/data.json")
+const buscarDadosProdutos = async (url) => {
+    const dados = await fetch(url)
     const parseDados = await dados.json()
     return parseDados
 }
 
+const salvaLocalStorage = (nome, item) => {
+    localStorage.setItem(nome, JSON.stringify(item))
+}
+
 const mostraSubTotal = (produtos) => {
-    const subtotal = document.querySelector('[data-Js="subtotal"]')
     if (produtos.length === 0) {
         subtotal.innerHTML = "Carrinho vazino"
         return
@@ -32,11 +40,10 @@ const mostraSubTotal = (produtos) => {
 
 const ContagemItens = () => {
     spamContagemItens.classList.add("display-none")
-    if(dataItens.produtos.length > 0){
+    if (dataItens.produtos.length > 0) {
         spamContagemItens.classList.remove("display-none")
         spamContagemItens.innerHTML = dataItens.produtos.length
     }
-    // console.log(dataItens.produtos);
 }
 
 const mostrarProdutosCarrinho = () => {
@@ -44,7 +51,8 @@ const mostrarProdutosCarrinho = () => {
         produtos
     } = dataItens
     if (produtos.length === 0) return
-    produtos.forEach((produto, index) => {
+
+    const criaHTMLProdutoCarrinho = (produto, arr) => {
         const produtosNaTela = Array.from(itensCarrinho.querySelectorAll('[data-nome]'))
         if (produtosNaTela.some(a => a.dataset.nome === produto.name)) return
 
@@ -72,46 +80,44 @@ const mostrarProdutosCarrinho = () => {
             </div>
         `
 
-        btnDelete.addEventListener("click", () => {
-            // console.log("antes de apaga", produtos);
+        divItemCarrinho.appendChild(btnDelete)
+        btnDelete.innerHTML = "X"
+
+        function removeItemCLicadoDoCarrinho() {
             divItemCarrinho.remove()
-            produtos.splice(index, 1)
-            // console.log("depois de apaga", produtos);
-            localStorage.setItem("dataItens", JSON.stringify(dataItens))
+            produtos.splice(arr.indexOf(produto), 1)
+            salvaLocalStorage("dataItens", dataItens)
             if (produtos.length === 0) {
                 itensCarrinho.classList.remove("active")
                 mostraSubTotal(produtos)
             }
             ContagemItens()
-        })
+        }
 
-        divItemCarrinho.appendChild(btnDelete)
-        btnDelete.innerHTML = "X"
-    })
+        btnDelete.addEventListener("click", removeItemCLicadoDoCarrinho)
+    }
+    produtos.forEach((produto, _, arr) => criaHTMLProdutoCarrinho(produto, arr))
 
     mostraSubTotal(produtos)
-
-    // console.log("log mostrarProdutosCarrinho", produtos);
 }
 mostrarProdutosCarrinho()
 
 const mostrarProdutosTela = async () => {
-    const dados = await buscarDadosProdutos()
+    const dados = await buscarDadosProdutos(url)
     const {
         items
     } = dados
-    // console.log("log mostrarProdutosTela", items);
 
-    const mediaPrecos = 
-        items.reduce((acc, cur) => acc + cur.product.price.value, 0)/items.length
-    // console.log(mediaPrecos);
+    const {
+        itens
+    } = itensGostei
 
-    items.forEach(({
-        product
-    }, idx) => {
+    const mediaPrecos =
+        items.reduce((acc, cur) => acc + cur.product.price.value, 0) / items.length
+
+    const criaHTMLCardProdutos = product => {
         const li = document.createElement("li")
         const {
-            id,
             images,
             name,
             price
@@ -121,13 +127,16 @@ const mostrarProdutosTela = async () => {
             installments,
             installmentValue
         } = price
+
+        const gostei = itens.includes(name) ? "checked" : ""
+
         const imgs = images.reduce((acc, cur, i) => {
             return i === 0 ?
                 `<li class="select" data-img="pequena"><img src="${cur}" alt="${name}"></li>` :
                 acc + `<li data-img="pequena"><img src="${cur}" alt="${name}"></li>`
         }, "")
 
-        const melhorPreco = value > mediaPrecos? "display-none": ""
+        const melhorPreco = value > mediaPrecos ? "display-none" : ""
 
         li.innerHTML = `
             <div class="produto" data-nome="${name}">
@@ -142,7 +151,7 @@ const mostrarProdutosTela = async () => {
                         <div>
                             <a href="#">${name}</a>
                             <label class="label-coracao anima-btn">
-                                <input type="checkbox" class="input-coracao">
+                                <input type="checkbox" class="input-coracao" data-inputCoracao="${name}" ${gostei}>
                                 <i class="coracao">
                                     <span></span>
                                     <span></span>
@@ -164,58 +173,81 @@ const mostrarProdutosTela = async () => {
             </div>
         `
         produtos.appendChild(li)
+    };
 
-        const btnsAddCarrinho = document.querySelectorAll('[data-Js="add-carrinho"]')
-        btnsAddCarrinho.forEach(btn => {
-            btn.addEventListener("click", salvaItensCarrinho)
-        });
+    items.forEach(({
+        product
+    }) => criaHTMLCardProdutos(product))
 
-        const lisImgsPequenas = li.querySelectorAll('[data-img="pequena"]')
-        const imgGrande = li.querySelector('[data-img="grande"]')
-        lisImgsPequenas.forEach(liImg => {
-            liImg.addEventListener("click", (e) => {
-                lisImgsPequenas.forEach(li => {
-                    // console.log(li);
-                    li.classList.remove("select")
-                })
-                e.target.parentElement.classList.add("select")
-                imgGrande.src = e.target.src
-                // console.log("cligey", e.target);
-            })
-        })
-    })
+    const btnsAddCarrinho = document.querySelectorAll('[data-Js="add-carrinho"]')
+    btnsAddCarrinho.forEach(btn =>
+        btn.addEventListener("click", salvaItensCarrinho)
+    )
+
+    const lisImgsPequenas = document.querySelectorAll('[data-img="pequena"]')
+    const imgGrande = document.querySelector('[data-img="grande"]')
+
+    const adicionaEventoMostraImgClicadaMaior = liImg => {
+        const mostraImgClicadaMaior = e => {
+            lisImgsPequenas.forEach(li => li.classList.remove("select"))
+            e.target.parentElement.classList.add("select")
+            imgGrande.src = e.target.src
+        }
+
+        liImg.addEventListener("click", (e) => mostraImgClicadaMaior(e))
+    }
+
+    lisImgsPequenas.forEach(liImg => adicionaEventoMostraImgClicadaMaior(liImg))
+
+    const inputsCoracao = document.querySelectorAll('[data-inputCoracao]')
+
+    const adicionaEventoSalvaItemComGostei = (input) => {
+        const salvaItensComGostei = (e) => {
+            const nomeItem = e.target.dataset.inputcoracao
+            const gostei = e.target.checked
+
+            if (gostei) itens.push(nomeItem)
+            if (!gostei) itens.splice(itens.indexOf(nomeItem), 1)
+
+            salvaLocalStorage("itensGostei", itensGostei)
+        }
+
+        input.addEventListener("change", e => salvaItensComGostei(e))
+    }
+
+    inputsCoracao.forEach(input => adicionaEventoSalvaItemComGostei(input))
 }
 mostrarProdutosTela()
 
 const salvaItensCarrinho = async (e) => {
     const {
         items
-    } = await buscarDadosProdutos()
+    } = await buscarDadosProdutos(url)
     const {
         produtos
     } = dataItens
+    const ItensCarrinho = produtos.map((produto) => produto.name)
     const nomeProdutoClicado = e.path[3].dataset.nome
-    const produtosNaTela = Array.from(itensCarrinho.querySelectorAll('[data-nome]'))
-    if (produtos.length !== 0) {
-        if (produtos.some(produto => produto.name === nomeProdutoClicado)) return
-        // console.log("if salvaItensCarrinho", produtos);
-    }
-    if (produtosNaTela.some(a => a.dataset.nome === nomeProdutoClicado)) return
     const filter = items.filter(item => item.product.name === nomeProdutoClicado)
     const [{
         product
     } = index] = filter
+    if (ItensCarrinho.includes(nomeProdutoClicado)) return
     produtos.push(product)
-    localStorage.setItem("dataItens", JSON.stringify(dataItens))
+    salvaLocalStorage("dataItens", dataItens)
     mostrarProdutosCarrinho()
     ContagemItens()
-    // console.log("log salvaItensCarrinho", dataItens);
 }
 
-btnCarrinho.addEventListener("click", () => {
+const abreCarrinho = () => {
     const {
         produtos
     } = dataItens
-    if (produtos.length === 0) return
+    if (produtos.length === 0) {
+        subtotal.innerHTML = "Carrinho vazino"
+    }
     itensCarrinho.classList.toggle("active")
-})
+}
+
+btnCarrinho.addEventListener("click", abreCarrinho)
+ContagemItens()
