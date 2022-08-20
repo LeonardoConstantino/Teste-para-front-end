@@ -244,7 +244,7 @@ const abreCarrinho = () => {
         produtos
     } = dataItens
     if (produtos.length === 0) {
-        subtotal.innerHTML = "Carrinho vazino"
+        subtotal.innerHTML = "Carrinho vazio"
     }
     itensCarrinho.classList.toggle("active")
 }
