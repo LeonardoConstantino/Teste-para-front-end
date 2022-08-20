@@ -135,7 +135,7 @@ footer.subtotal>hr {
 
 @media screen and (min-width: 740px) {
     .itens-carrinho{
-        width: 100%;
+        width: 70%;
         max-width: 900px;
     }
 
