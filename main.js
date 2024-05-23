@@ -227,7 +227,7 @@ const salvaItensCarrinho = async (e) => {
         produtos
     } = dataItens
     const ItensCarrinho = produtos.map((produto) => produto.name)
-    const nomeProdutoClicado = e.path[3].dataset.nome
+    const nomeProdutoClicado = e.target.parentElement.parentElement.parentElement.dataset.nome
     const filter = items.filter(item => item.product.name === nomeProdutoClicado)
     const [{
         product
